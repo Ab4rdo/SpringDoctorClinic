@@ -1,5 +1,6 @@
 package springdoctorclinic.doc.service;
 
+import org.springframework.dao.DataAccessException;
 import springdoctorclinic.doc.model.Patient;
 import springdoctorclinic.doc.model.Visit;
 
@@ -12,6 +13,8 @@ public interface ClinicService
     Collection<Patient> findAllPatients();
     void savePatient(Patient patient);
     void deletePatient(Patient patient);
+    Collection<Patient> findPatientByLastName(String lastName);
+    
     
     Collection<Visit> findVisitByPatientId(int patientId);
     Visit findVisitById(int visitId);
